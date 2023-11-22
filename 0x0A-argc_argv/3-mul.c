@@ -1,22 +1,19 @@
+#include "holberton.h"
 #include <stdio.h>
-#include <stdlib.h>
-
 /**
- * main -  Prints number of arguements
- * @argc: arguement
- * @argv: array 
- * Return: 0
- **/
+ * main - prints all the arguments
+ * @argc: number of arguments
+ * @argv: that hold the arguments
+ *
+ * Return: returns 0 
+ */
 
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
-	if (argc <= 2)
-	{
-		printf("%s\n", "Error");
-		return (1);
-	}
-	else
-		printf("%d\n", (atoi(argv[argc - 1]) * atoi(argv[argc - 2])));
+	int i = 0;
+
+	while (i++ < argc)
+		printf("%s\n", *argv++);
 	return (0);
 }
 
