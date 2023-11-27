@@ -1,13 +1,11 @@
-#ifndef _DOG_H_
-#define _DOG_H_
+#ifndef FILE_DOG
+#define FILE_DOG
 
-/*
- * @name: Name of the dog
- * @age: Age of the dog
- * @owner: Owner of the dog
- *
- * Description : named dog that stores some information
- * about any dog, consisting of; the name, age and owner.
+/**
+ * struct dog - structure dog
+ * @name: atribute name's dog
+ * @age: atribute age's dog
+ * @owner: atribute owner's dog
  */
 struct dog
 {
@@ -15,5 +13,15 @@ struct dog
 	float age;
 	char *owner;
 };
+
+typedef struct dog dog_t;
+
+void init_dog(struct dog *d, char *name, float age, char *owner);
+
+void print_dog(struct dog *d);
+
+dog_t *new_dog(char *name, float age, char *owner);
+
+void free_dog(dog_t *d);
 
 #endif
